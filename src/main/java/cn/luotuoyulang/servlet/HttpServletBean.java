@@ -2,6 +2,9 @@ package cn.luotuoyulang.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @Classname HttpServletBean
@@ -17,4 +20,10 @@ public abstract class HttpServletBean extends HttpServlet {
 
     protected void initServletBean() throws ServletException {
     }
+
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doService(req,resp);
+    }
+
+    protected abstract void doService(HttpServletRequest req, HttpServletResponse resp);
 }

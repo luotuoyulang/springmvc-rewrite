@@ -27,7 +27,7 @@ public class AbstractDispatcherServletInitializer implements WebApplicationIniti
     public void onStartup(ServletContext servletContext) throws ServletException {
         // 1、开始注册我们的 DispatcherServlet
         ServletRegistration.Dynamic dispatcherServlet = servletContext.addServlet("dispatcherServlet", new DispatcherServlet());
-        dispatcherServlet.addMapping("/");
+        dispatcherServlet.addMapping("/*");
         dispatcherServlet.setLoadOnStartup(1);
     }
 }
